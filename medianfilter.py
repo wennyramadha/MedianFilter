@@ -1,4 +1,9 @@
-
+"""
+****************************************************************
+#Author: wennyramadha
+#This is the implementation of Median Filter
+****************************************************************
+"""
 
 def filtering(self,image): #median filter
         img_filter = image[:]
