@@ -4,8 +4,10 @@
 #This is the implementation of Median Filter
 ****************************************************************
 """
+import cv2
 
-def filtering(self,image): #median filter
+
+def filtering(image): #median filter
         img_filter = image[:]
         for j in range(len(image)):
             for i in range(j):
@@ -25,5 +27,18 @@ def filtering(self,image): #median filter
 
                 members.sort()
                 img_filter[j, i] = members[4]
-        # cv2.imshow("filter", img_filter)
+            # cv2.imshow("filter", img_filter)
         return img_filter
+
+if __name__ == '__main__':
+    img=cv2.imread("S5000L00.png")
+    gray=cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    cv2.imshow("original image", img)
+    img_filter=filtering(gray)
+    cv2.imshow("filtered image", img_filter)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+
+
